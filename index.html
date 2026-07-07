@@ -1,276 +1,121 @@
-<!DOCTYPE html>
+Вот содержимое нового index.html — скопируй весь текст отсюда:
+html<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>Ростикс Доставка</title>
-<meta name="description" content="Ростикс Доставка — выберите город и оформите заказ через Едостав">
-<style>
-  :root{
-    --red:#D70214;
-    --red-tint:#FBE4E1;
-    --black:#141414;
-    --white:#ffffff;
-    --gray:#767676;
-    --line:#ececec;
-    --hero:#FAF4F4;
-    --radius:16px;
-  }
-  *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;}
-  body{
-    background:var(--white);
-    color:var(--black);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{
-    max-width:520px;
-    margin:0 auto;
-    padding:0 20px;
-  }
-
-  /* header */
-  header{
-    border-bottom:1px solid var(--line);
-    padding:16px 0;
-  }
-  header .wrap img{height:36px;width:auto;}
-
-  /* hero */
-  .hero{
-    background:var(--hero);
-    padding:36px 0 0;
-    overflow:hidden;
-  }
-  .hero-inner{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-  }
-  .hero-text{width:100%;}
-  .hero-img{
-    width:78%;
-    max-width:340px;
-    margin:8px 0 0;
-  }
-  .hero-img img{
-    display:block;
-    width:100%;
-    height:auto;
-  }
-  @media (min-width:760px){
-    .wrap{max-width:1040px;}
-    .hero-inner{
-      flex-direction:row;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:24px;
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ростикс Доставка</title>
+  <meta name="description" content="Ростикс Доставка — выберите город и оформите заказ через Едостав">
+  <style>
+    :root {
+      --red: #e4001b;
+      --black: #111111;
+      --text: #171717;
+      --muted: #777777;
+      --line: #ededed;
+      --bg: #ffffff;
+      --soft: #fafafa;
+      --shadow: 0 12px 34px rgba(0,0,0,.075);
+      --radius: 20px;
     }
-    .hero-text{width:50%;padding-bottom:40px;}
-    .hero-img{width:42%;max-width:460px;margin:0;}
-    .section .wrap{max-width:640px;}
-  }
-  .hero h1{
-    font-size:26px;
-    line-height:1.25;
-    font-weight:800;
-    margin:0 0 12px;
-    letter-spacing:-.01em;
-  }
-  .hero h1 span{color:var(--red);}
-  .hero p{
-    font-size:15px;
-    color:#4d4d4d;
-    margin:0;
-    line-height:1.5;
-  }
-
-  /* city section */
-  .section{padding:32px 0 40px;}
-  .section h2{
-    font-size:21px;
-    font-weight:800;
-    margin:0 0 6px;
-  }
-  .section > .wrap > p{
-    font-size:14px;
-    color:var(--gray);
-    margin:0 0 20px;
-  }
-
-  .list{display:flex;flex-direction:column;gap:10px;}
-
-  .card{
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    overflow:hidden;
-  }
-
-  a.row, summary.row{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    padding:16px 16px;
-    text-decoration:none;
-    color:var(--black);
-    cursor:pointer;
-    list-style:none;
-  }
-  summary.row::-webkit-details-marker{display:none;}
-
-  .pin{width:18px;height:18px;flex-shrink:0;color:var(--red);}
-  .name{font-size:16px;font-weight:700;flex-shrink:0;}
-  .badge{
-    background:var(--red-tint);
-    color:var(--red);
-    font-size:12.5px;
-    font-weight:700;
-    padding:4px 10px;
-    border-radius:999px;
-    white-space:nowrap;
-  }
-  .spacer{flex:1;}
-  .chevron, .arrow{
-    width:11px;height:11px;
-    border-right:2px solid var(--gray);
-    border-bottom:2px solid var(--gray);
-    flex-shrink:0;
-  }
-  .chevron{transform:rotate(45deg);transition:transform .2s ease;}
-  details[open] summary .chevron{transform:rotate(-135deg);}
-  .arrow{
-    transform:rotate(-45deg);
-    border-color:var(--red);
-    margin-right:2px;
-  }
-  a.row:active .name, a.row:active .pin{color:var(--red);}
-
-  .branches{
-    border-top:1px solid var(--line);
-    padding:6px 0;
-  }
-  .branch{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:13px 16px 13px 46px;
-    text-decoration:none;
-    color:var(--black);
-    font-size:14.5px;
-    font-weight:600;
-    border-bottom:1px solid var(--line);
-  }
-  .branch:last-child{border-bottom:none;}
-  .branch .go{
-    color:var(--red);
-    font-size:13.5px;
-    font-weight:700;
-    text-decoration:underline;
-    white-space:nowrap;
-  }
-  a.row:hover, summary.row:hover{background:#fafafa;}
-  .branch:hover{background:#fafafa;}
-
-  .empty{
-    text-align:center;
-    color:var(--gray);
-    font-size:14px;
-    padding:24px 0;
-  }
-
-  footer{
-    text-align:center;
-    font-size:13px;
-    color:var(--gray);
-    padding:0 20px 32px;
-  }
-  footer a{color:var(--gray);}
-</style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top, #fff 0, #fff 45%, #f7f7f7 100%);
+    }
+    .page { width: min(720px, 100%); margin: 0 auto; padding: 30px 18px 24px; }
+    .header { display: flex; justify-content: center; margin: 6px 0 28px; }
+    .brand-image { display: block; width: min(280px, 70vw); height: auto; object-fit: contain; }
+    h1 { margin: 0 0 24px; color: var(--black); font-size: clamp(31px, 8vw, 48px); line-height: .98; letter-spacing: -.045em; text-align: center; font-weight: 800; }
+    .cities { display: grid; gap: 12px; }
+    .city { background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+    .city-button, .branch-link { width: 100%; border: 0; background: transparent; color: inherit; font: inherit; text-decoration: none; cursor: pointer; }
+    .city-button { display: flex; align-items: center; gap: 12px; padding: 20px 18px; text-align: left; transition: transform .14s ease, background .14s ease; }
+    .city-button:active { transform: scale(.985); }
+    .pin { width: 34px; height: 34px; display: grid; place-items: center; flex: 0 0 auto; border-radius: 12px; background: rgba(228, 0, 27, .08); color: var(--red); }
+    .pin svg { width: 18px; height: 18px; }
+    .city-name { flex: 1; font-size: 21px; font-weight: 850; letter-spacing: -.02em; }
+    .arrow { color: var(--red); font-size: 24px; line-height: 1; font-weight: 900; transition: transform .2s ease; }
+    .city.open .arrow { transform: rotate(180deg); }
+    .branches { display: grid; grid-template-rows: 0fr; padding: 0 12px; transition: grid-template-rows .22s ease, padding .22s ease; }
+    .branches-inner { overflow: hidden; display: grid; gap: 8px; }
+    .city.open .branches { grid-template-rows: 1fr; padding: 0 12px 12px; }
+    .branch-link { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 14px 14px; border-radius: 14px; background: var(--soft); border: 1px solid var(--line); font-weight: 750; }
+    .branch-link span:last-child { color: var(--red); font-size: 20px; }
+    @media (hover:hover) { .city-button:hover, .branch-link:hover { background: #fff6f7; } .city:hover { transform: translateY(-1px); } .city { transition: transform .14s ease; } }
+    @media (min-width:720px) { .cities { grid-template-columns: repeat(2, minmax(0, 1fr)); } .city:first-child { grid-column: 1/-1; } }
+  </style>
 </head>
 <body>
-
-<header>
-  <div class="wrap">
-    <img src="logo.webp" alt="Ростикс Доставка">
-  </div>
-</header>
-
-<section class="hero">
-  <div class="wrap">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <h1>Любимые блюда РОСТИКС<br><span>с доставкой на дом</span></h1>
-        <p>Быстро, вкусно и удобно! Доставляем заказы из ресторанов РОСТИКС в вашем городе.</p>
-      </div>
-      <div class="hero-img">
-        <img src="food.webp" alt="Наггетсы, картофель фри и ролл РОСТИКС">
-      </div>
+  <main class="page">
+    <div class="header">
+      <img class="brand-image" src="logo.webp" alt="Ростикс Доставка">
     </div>
-  </div>
-</section>
+    <h1>Ростикс Доставка</h1>
+    <div class="cities" id="cities"></div>
+  </main>
 
-<section class="section" id="cities">
-  <div class="wrap">
-    <h2>Выберите город</h2>
-    <p>Нажмите на город, чтобы оформить заказ через Едостав</p>
-    <div class="list" id="list"></div>
-  </div>
-</section>
+  <script src="cities.js"></script>
+  <script>
+    const citiesContainer = document.getElementById('cities');
+    const pinIcon = `<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>`;
 
-<footer>Заказ оформляется через сервис <a href="https://edostav.ru" target="_blank" rel="noopener">Едостав</a></footer>
+    function renderCities(cities) {
+      const active = cities.filter(c => c.enabled);
+      citiesContainer.innerHTML = '';
+      
+      active.forEach(city => {
+        const branches = (city.branches || []).filter(b => b.enabled !== false);
+        if (!branches.length) return;
 
-<script src="cities.js"></script>
-<script>
-  const PIN = '<svg class="pin" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>';
+        const cityEl = document.createElement('article');
+        cityEl.className = 'city';
+        
+        const button = document.createElement('button');
+        button.className = 'city-button';
+        button.type = 'button';
+        button.innerHTML = `<span class="pin">${pinIcon}</span><span class="city-name">${city.name}</span><span class="arrow">${branches.length > 1 ? '⌄' : '›'}</span>`;
 
-  function pluralBranches(n){
-    const mod10 = n % 10, mod100 = n % 100;
-    if (mod10 === 1 && mod100 !== 11) return 'филиал';
-    if ([2,3,4].includes(mod10) && ![12,13,14].includes(mod100)) return 'филиала';
-    return 'филиалов';
-  }
+        if (branches.length === 1) {
+          button.addEventListener('click', () => window.location.href = branches[0].url);
+          cityEl.appendChild(button);
+          citiesContainer.appendChild(cityEl);
+          return;
+        }
 
-  const list = document.getElementById('list');
-  const active = CITIES.filter(c => c.enabled);
-
-  if (active.length === 0) {
-    list.innerHTML = '<div class="empty">Пока нет доступных городов</div>';
-  }
-
-  active.forEach(city => {
-    const card = document.createElement('div');
-    card.className = 'card';
-
-    if (city.branches.length === 1) {
-      card.innerHTML = `
-        <a class="row" href="${city.branches[0].url}" target="_blank" rel="noopener">
-          ${PIN}
-          <span class="name">${city.name}</span>
-          <span class="spacer"></span>
-          <span class="arrow"></span>
-        </a>`;
-    } else {
-      const branchesHtml = city.branches.map(b => `
-        <a class="branch" href="${b.url}" target="_blank" rel="noopener">
-          <span>${b.name}</span>
-          <span class="go">Оформить заказ ↗</span>
-        </a>`).join('');
-
-      card.innerHTML = `
-        <details>
-          <summary class="row">
-            ${PIN}
-            <span class="name">${city.name}</span>
-            <span class="badge">${city.branches.length} ${pluralBranches(city.branches.length)}</span>
-            <span class="spacer"></span>
-            <span class="chevron"></span>
-          </summary>
-          <div class="branches">${branchesHtml}</div>
-        </details>`;
+        const branchList = document.createElement('div');
+        branchList.className = 'branches';
+        const branchInner = document.createElement('div');
+        branchInner.className = 'branches-inner';
+        
+        branches.forEach(branch => {
+          const link = document.createElement('a');
+          link.className = 'branch-link';
+          link.href = branch.url;
+          link.target = '_blank';
+          link.rel = 'noopener';
+          link.innerHTML = `<span>${branch.name}</span><span>›</span>`;
+          branchInner.appendChild(link);
+        });
+        
+        branchList.appendChild(branchInner);
+        
+        button.addEventListener('click', () => {
+          document.querySelectorAll('.city.open').forEach(openCity => {
+            if (openCity !== cityEl) openCity.classList.remove('open');
+          });
+          cityEl.classList.toggle('open');
+        });
+        
+        cityEl.appendChild(button);
+        cityEl.appendChild(branchList);
+        citiesContainer.appendChild(cityEl);
+      });
     }
-    list.appendChild(card);
-  });
-</script>
+
+    renderCities(CITIES);
+  </script>
 </body>
 </html>
