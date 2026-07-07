@@ -9,12 +9,12 @@ const CITIES = [
     name: "Махачкала",
     enabled: true,
     branches: [
-      { name: "Гамидова",      url: "https://makhachkala.edostav.ru/restorany/rostics-gamidova" },
-      { name: "Казбекова",     url: "https://makhachkala.edostav.ru/restorany/rostics-kazbekova" },
-      { name: "Акушинского",   url: "https://makhachkala.edostav.ru/restorany/rostics-akushinskogo" },
-      { name: "Ленина",        url: "https://makhachkala.edostav.ru/restorany/rostics-lenina" },
-      { name: "Толстого",      url: "https://makhachkala.edostav.ru/restorany/rostics-tolstogo" },
-      { name: "Редукторный",   url: "https://makhachkala.edostav.ru/restorany/rostics-reduktornyj" }
+      { name: "Ростикс Гамидова",      url: "https://makhachkala.edostav.ru/restorany/rostics-gamidova" },
+      { name: "Ростикс Казбекова",     url: "https://makhachkala.edostav.ru/restorany/rostics-kazbekova" },
+      { name: "Ростикс Акушинского",   url: "https://makhachkala.edostav.ru/restorany/rostics-akushinskogo" },
+      { name: "Ростикс Ленина",        url: "https://makhachkala.edostav.ru/restorany/rostics-lenina" },
+      { name: "Ростикс Толстого",      url: "https://makhachkala.edostav.ru/restorany/rostics-tolstogo" },
+      { name: "Ростикс Редукторный",   url: "https://makhachkala.edostav.ru/restorany/rostics-reduktornyj" }
     ]
   },
   {
