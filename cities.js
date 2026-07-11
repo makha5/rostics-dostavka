@@ -51,5 +51,12 @@ const CITIES = [
     branches: [
       { name: "Хасавюрт", url: "https://khasavyurt.edostav.ru/restorany/rostics-hasavyurt" }
     ]
+  },
+  {
+    name: "Черкесск",
+    enabled: true,
+    branches: [
+      { name: "Черкесск", url: "https://cherkessk.edostav.ru/restorany/rostics-cherkessk" }
+    ]
   }
 ];
